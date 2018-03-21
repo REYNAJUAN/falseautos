@@ -1,0 +1,26 @@
+{
+    "development": {
+      "username": "fvteam",
+      "password": null,
+      "database": "cars_data",
+      "host": "localhost",
+      "port":"3306",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "fvteam",
+      "password": null,
+      "database": "database_test",
+      "host": "localhost",
+      "port":"3306",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "fvteam",
+      "password": null,
+      "database": "database_production",
+      "host": "localhost",
+      "port":"3306",
+      "dialect": "mysql"
+    }
+  }
