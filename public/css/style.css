@@ -1,0 +1,237 @@
+/* -----------------------------------
+	Fonts
+--------------------------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Russo+One');
+
+/* -----------------------------------
+	Globals
+--------------------------------------------------------------------------------------------- */
+
+body {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* -----------------------------------
+	Header Top
+--------------------------------------------------------------------------------------------- */
+
+.main-header {
+	background: #F5F5F5;
+}
+
+.logo-wrapper {
+	float: left;
+	padding: 5px 0;
+}
+
+.logo-wrapper a {
+    font-family:  "Russo One", Helvetica, sans-serif;
+    font-size: 1.625em;
+    text-transform: uppercase;
+
+}
+
+.site-brand {
+	width: 100%;
+	float: left;
+}
+
+.nav-toggle {
+	display: block;
+	float: right;
+}
+
+/* -----------------------------------
+	Navigation
+--------------------------------------------------------------------------------------------- */
+
+.navbar-default {
+	background: transparent;
+}
+
+.navbar {
+	border: 0px;
+	margin-bottom: 0px;
+}
+
+#main-nav {
+	clear: both;
+}
+
+.navbar-header {
+	float: right;
+}
+
+/* -----------------------------------
+	Search
+--------------------------------------------------------------------------------------------- */
+
+.search-toggle {
+	width: 50px;
+	height: 50px;
+	border: 0px;
+	font-size: 18px;
+	background: #e7e7e7;
+	float: right;
+	margin-right: 15px;
+}
+
+.search-toggle:hover {
+	color: #FFF;
+	background: #333;
+}
+
+.form-group {
+	float: left;
+	width: 100%;
+}
+
+#nav-search {
+	background: #DDD;
+	padding: 20px 0px;
+}
+
+#nav-search button {
+	width: 100%;
+	float: right;
+}
+
+/* -----------------------------------
+	Footer
+--------------------------------------------------------------------------------------------- */
+
+.footer-container {
+	background: #E7E7E7;
+}
+
+.footer-content p {
+	padding: 20px 20px 10px;
+}
+
+.copyright p,
+.links p {
+	font-size: 10px;
+	text-align: center;
+}
+
+.main-footer a {
+	color: #000;
+}
+
+.main-footer span {
+	margin: 0 10px;
+}
+
+.links {
+	text-align: right;
+}
+
+/* -----------------------------------
+	Admin
+--------------------------------------------------------------------------------------------- */
+
+.page-title {
+	border-bottom: 3px solid #e5e5e5;
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+}
+
+.vehicle-data {
+	padding: 30px 0;
+}
+
+.admin input {
+	margin-bottom: 20px;
+}
+
+/* -----------------------------------
+	Responsive CSS
+--------------------------------------------------------------------------------------------- */
+
+/* Small devices (tablets, 768px and up) @screen-sm-min */
+@media (min-width: 768px) {
+	.logo-wrapper {
+		padding: 10px 0;
+	}
+	.phone-numbers ul li {
+		width: auto;
+		margin: 0 10px;
+	}
+	.site-brand {
+		width: auto;
+		float: left;
+	}
+	.nav-toggle {
+		display: none;
+	}
+	#main-nav {
+		width: 100%;
+		float: right;
+		clear: none;
+	}
+	.search-toggle {
+		margin-right: 0;
+	}
+	#nav-search {
+		padding: 20px 0 5px;
+	}
+	.form-group {
+		width: 640px;
+	}
+	#nav-search button {
+		width: auto;
+	}
+	ul.nav {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.copyright p {
+		text-align: left;
+	}
+	.links p {
+		text-align: right;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) @screen-md-min */
+@media (min-width: 992px) {
+	#main-nav {
+		width: 740px;
+	}
+	.contact-info p {
+		text-align: left;
+	}
+	
+	.phone-numbers ul {
+		text-align: right;
+	}
+	.phone-numbers ul li {
+		width: auto;
+		margin: 0 0 0 20px;
+	}
+	.navbar-header {
+		float: right;
+	}
+	.form-group {
+		width: 860px;
+	}
+	.copyright p,
+	.links p {
+		font-size: 11px;
+	}
+	.navbar-nav {
+		float: right;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	#main-nav {
+		width: 940px;
+	}
+	.form-group {
+		width: 1060px;
+	}
+}
