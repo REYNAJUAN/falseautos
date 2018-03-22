@@ -10,7 +10,7 @@ var bodyParser = require("body-parser");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 5000;
 
 // Sets up the Express app to handle data parsing
 
@@ -19,15 +19,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory to be served
-app.use(express.static("app/public"));
 
-// Routes
+app.set('view engine', 'hbs'); // <-- This won't require the package. 
+app.set('view options', { layout: 'layouts/main' });
+
+
+// Load Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
+var view_routes = require('./routes/view_routes'); // <-- See 'routes/views'
 
+// Static directory to be served
+app.use('/', view_routes);
+
+// Load Routes
 // Starts the server to begin listening
+// localhost:5000
 // =============================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log(`Listening on ${PORT}`);
 });
+
+// app.listen(PORT, function() {
+//   console.log("App listening on PORT " + PORT);
+// });

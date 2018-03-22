@@ -4,45 +4,105 @@
 
 // Dependencies
 // =============================================================
-var router = require('express').Router();
-
-router.get('/', function(req, res) {
-  res.render('index');
-});
+var Book = require("../models/Note.js");
 
 // Routes
 // =============================================================
-module.exports = router;
+module.exports = function(app) {
+  // Get all books
+  app.get("/api/all", function(req, res) {
+    Note.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
 
-//   // Get all chirps
-//   app.get("/api/all", function(req, res) {
+  // Get a specific book
+  app.get("/api/:book", function(req, res) {
+    if (req.params.book) {
+      Note.findAll({
+        where: {
+          title: req.params.book
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+    }
+  });
 
-//     // Finding all Chirps, and then returning them to the user as JSON.
-//     // Sequelize queries are asynchronous, which helps with perceived speed.
-//     // If we want something to be guaranteed to happen after the query, we'll use
-//     // the .then function
-//     Chirp.findAll({}).then(function(results) {
-//       // results are available to us inside the .then
-//       res.json(results);
-//     });
+  // Get all books of a specific genre
+  app.get("/api/genre/:genre", function(req, res) {
+    if (req.params.genre) {
+      Note.findAll({
+        where: {
+          genre: req.params.genre
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+    }
+  });
 
-//   });
+  // Get all books from a specific author
+  app.get("/api/author/:author", function(req, res) {
+    if (req.params.author) {
+      Note.findAll({
+        where: {
+          author: req.params.author
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+    }
+  });
 
-//   // Add a chirp
-//   app.post("/api/new", function(req, res) {
+  // Get all "long" books (books 150 pages or more)
+  app.get("/api/books/long", function(req, res) {
+    Note.findAll({
+      where: {
+        pages: {
+          $gte: 150
+        }
+      },
+      order: [["pages", "DESC"]]
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
 
-//     console.log("Cars Inventory Data:");
-//     console.log(req.body);
+  // Get all "short" books (books 150 pages or less)
+  app.get("/api/books/short", function(req, res) {
+    Note.findAll({
+      where: {
+        pages: {
+          $lte: 150
+        }
+      },
+      order: [["pages", "ASC"]]
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
 
-//     Chirp.create({
-//       author: req.body.author,
-//       body: req.body.body,
-//       created_at: req.body.created_at
-//     }).then(function(results) {
-//       // `results` here would be the newly created chirp
-//       res.end();
-//     });
+  // Add a book
+  app.post("/api/new", function(req, res) {
+    console.log("Book Data:");
+    console.log(req.body);
+    Note.create({
+      title: req.body.title,
+      author: req.body.author,
+      genre: req.body.genre,
+      pages: req.body.pages
+    });
+  });
 
-//   });
-
-// };
+  // Delete a book
+  app.post("/api/delete", function(req, res) {
+    console.log("Book Data:");
+    console.log(req.body);
+    Note.destroy({
+      where: {
+        id: req.body.id
+      }
+    });
+  });
+};

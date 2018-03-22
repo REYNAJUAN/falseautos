@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS cars_db;
 CREATE DATABASE cars_db;
 USE cars_db;
 
-CREATE TABLE `cars_inventory` (
+CREATE TABLE `notes` (
     `id` Int( 11 ) AUTO_INCREMENT NOT NULL,
     `make` VARCHAR(50) NOT NULL,
     `model` VARCHAR(50) NOT NULL,
@@ -16,7 +16,6 @@ CREATE TABLE `cars_inventory` (
     `fuel` VARCHAR(50) NOT NULL,
     `vin` VARCHAR(17) NOT NULL,
     `warranty` VARCHAR(50) NOT NULL,
-    `created_at` DATETIME NOT NULL,
 
     PRIMARY KEY ( `id` )
 );
