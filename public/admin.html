@@ -15,143 +15,147 @@
 </head>
 
 <body class="admin">
+
+    <div class="wrapper">
   
-<!-- Main Header -->
-<header class="main-header">
+        <!-- Main Header -->
+        <header class="main-header interior-header">
 
-        <!-- ========================================
-        //	HEADER TOP CONTENT
-        ====================================================================== -->
-        
-        <div class="container">
+            <!-- ========================================
+            //	HEADER TOP CONTENT
+            ====================================================================== -->
             
-            <div class="site-brand">
-    
-                <!-- ========================================
-                //	BRAND LOGO GOES HERE
-                ====================================================================== -->
+            <div class="container">
                 
-                <div class="logo-wrapper">
-                    
-                    <a href="index.html">False <span>Autos</span></a>
-                
-                </div> <!-- /.logo-wrapper -->
-                
-                <button type="button" class="nav-toggle btn btn-default navbar-btn collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle Navigation</span>
-                    Menu
-                </button>
-                
-            </div> <!-- /.site-brand -->
-    
-            <!-- Main Nav -->
-            <nav id="main-nav" class="navbar-default navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="inventory.html">Inventory</a></li>
-                    <li class="active"><a href="admin.html">Login</a></li>
-                </ul> <!-- /.nav -->
-            </nav> <!-- /.navbar -->
+                <div class="site-brand">
         
-        </div>
-    
-    </header> <!-- /#main-header -->
-    
-    <!-- Content -->
-    <div class="content-wrapper">
-    
-        <!-- ========================================
-        //	CONTENT GOES HERE 
-        ====================================================================== -->
-        <div class="container">
-
-            <div class="vehicle-data">
-
-                <div class="row">
-                    <div class="col-sm-12">
-
-                        <div class="page-title">
-
-                            <h1>New Vehicle Data</h1>
-
-                        </div> <!-- /page-title -->
-
-                    </div> <!-- /col-sm-12 -->
-                </div> <!-- /row -->
-
-                <div class="row">
+                    <!-- ========================================
+                    //	BRAND LOGO GOES HERE
+                    ====================================================================== -->
+                    
+                    <div class="logo-wrapper">
                         
-                    <form>
+                        <a href="index.html">False <span>Autos</span></a>
+                    
+                    </div> <!-- /.logo-wrapper -->
+                    
+                    <button type="button" class="nav-toggle btn btn-default navbar-btn collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle Navigation</span>
+                        Menu
+                    </button>
+                    
+                </div> <!-- /.site-brand -->
+        
+                <!-- Main Nav -->
+                <nav id="main-nav" class="navbar-default navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Inventory</a></li>
+                        <li><a href="admin.html">Login</a></li>
+                    </ul> <!-- /.nav -->
+                </nav> <!-- /.navbar -->
+            
+            </div>
+        
+        </header> <!-- /#main-header -->
+        
+        <!-- Content -->
+        <div class="content-wrapper">
+        
+            <!-- ========================================
+            //	CONTENT GOES HERE 
+            ====================================================================== -->
+            <div class="container">
 
-                        <div class="col-sm-4">
+                <div class="vehicle-data">
 
-                            <label for="make">Make</label>
-                            <input type="text" class="form-control" id="make" placeholder="Example: Toyota">
+                    <div class="row">
+                        <div class="col-sm-12">
 
-                            <label for="model">Model</label>
-                            <input type="text" class="form-control" id="model" placeholder="Example: Camry">
+                            <div class="page-title">
+
+                                <h1>New Vehicle Data</h1>
+
+                            </div> <!-- /page-title -->
+
+                        </div> <!-- /col-sm-12 -->
+                    </div> <!-- /row -->
+
+                    <div class="row">
                             
-                            <label for="year">Year</label>
-                            <input type="text" class="form-control" id="year" placeholder="Example: 2015">
+                        <form>
 
-                            <label for="trim">Trim</label>
-                            <input type="text" class="form-control" id="trim" placeholder="Example: SE">
+                            <div class="col-sm-4">
+                                
+                                <label for="year">Year</label>
+                                <input type="text" class="form-control" id="year" placeholder="Example: 2015">
 
-                        </div> <!-- /col-sm-4 -->
+                                <label for="make">Make</label>
+                                <input type="text" class="form-control" id="make" placeholder="Example: Toyota">
 
-                        <div class="col-sm-4">
+                                <label for="model">Model</label>
+                                <input type="text" class="form-control" id="model" placeholder="Example: Camry">
 
-                            <label for="mileage">Mileage</label>
-                            <input type="text" class="form-control" id="mileage" placeholder="Example: 45,000">
+                                <label for="trim">Trim</label>
+                                <input type="text" class="form-control" id="trim" placeholder="Example: SE">
 
-                            <label for="engine">Engine</label>
-                            <input type="text" class="form-control" id="engine" placeholder="Example: 2.5L I-4 Cyl">
+                            </div> <!-- /col-sm-4 -->
+
+                            <div class="col-sm-4">
+
+                                <label for="mileage">Mileage</label>
+                                <input type="text" class="form-control" id="mileage" placeholder="Example: 45,000">
+
+                                <label for="engine">Engine</label>
+                                <input type="text" class="form-control" id="engine" placeholder="Example: 2.5L I-4 Cyl">
+                                
+                                <label for="year">Transmission</label>
+                                <input type="text" class="form-control" id="year" placeholder="Example: Automatic">
+
+                                <label for="drivetrain">Drivetrain</label>
+                                <input type="text" class="form-control" id="drivetrain" placeholder="Example: FWD">
+
+                            </div> <!-- /col-sm-4 -->
+
+                            <div class="col-sm-4">
+
+                                <label for="exterior-color">Exterior Color</label>
+                                <input type="text" class="form-control" id="exterior-color" placeholder="Example: White">
+
+                                <label for="interior">Interior</label>
+                                <input type="text" class="form-control" id="interior" placeholder="Example: Black">
+                                
+                                <label for="vin">VIN</label>
+                                <input type="text" class="form-control" id="v" placeholder="Example: 4T1BF1FK8FU034917">
+
+                                <label for="warranty">Warranty</label>
+                                <input type="text" class="form-control" id="warranty" placeholder="Example: Service-Contract">
+
+                            </div> <!-- /col-sm-4 -->
+
+                            <div class="col-xs-12">
+                                
+                                <label for="images">Images</label>
+                                <input type="file" id="images">
+
+                            </div> <!-- /col-xs-12 -->
+
+                            <div class="col-xs-12">
+
+                                <button type="submit" class="btn btn-default btn-primary">Submit</button>
+
+                            </div>
+
+                        </form>
+
+                    </div> <!-- /.row -->
                             
-                            <label for="year">Transmission</label>
-                            <input type="text" class="form-control" id="year" placeholder="Example: Automatic">
+                </div> <!-- /vehicle-data -->
+            </div> <!--/.container -->
+        
+        </div> <!-- /.content-wrapper -->
 
-                            <label for="drivetrain">Drivetrain</label>
-                            <input type="text" class="form-control" id="drivetrain" placeholder="Example: FWD">
-
-                        </div> <!-- /col-sm-4 -->
-
-                        <div class="col-sm-4">
-
-                            <label for="exterior-color">Exterior Color</label>
-                            <input type="text" class="form-control" id="exterior-color" placeholder="Example: White">
-
-                            <label for="interior">Interior</label>
-                            <input type="text" class="form-control" id="interior" placeholder="Example: Black">
-                            
-                            <label for="vin">VIN</label>
-                            <input type="text" class="form-control" id="v" placeholder="Example: 4T1BF1FK8FU034917">
-
-                            <label for="warranty">Warranty</label>
-                            <input type="text" class="form-control" id="warranty" placeholder="Example: Service-Contract">
-
-                        </div> <!-- /col-sm-4 -->
-
-                        <div class="col-xs-12">
-                            
-                            <label for="images">Images</label>
-                            <input type="file" id="images">
-
-                        </div> <!-- /col-xs-12 -->
-
-                        <div class="col-xs-12">
-
-                            <button type="submit" class="btn btn-default">Submit</button>
-
-                        </div>
-
-                    </form>
-
-                </div> <!-- /.row -->
-                        
-            </div> <!-- /vehicle-data -->
-        </div> <!--/.container -->
-    
-    </div> <!-- /.content-wrapper -->
+    </div> <!-- /wrapper -->
 
     <!-- Main Footer -->
     <footer class="main-footer">

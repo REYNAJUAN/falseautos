@@ -8,9 +8,33 @@
 	Globals
 --------------------------------------------------------------------------------------------- */
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 16px;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+.btn-primary {
+	background-color: #25A0E3;
+	border: 0;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 40px;
 }
 
 /* -----------------------------------
@@ -18,7 +42,15 @@ body {
 --------------------------------------------------------------------------------------------- */
 
 .main-header {
-	background: #F5F5F5;
+	position: absolute;
+	padding-top: 20px;
+	width: 100%;
+}
+
+.interior-header {
+	background-color: #060807;
+	position: relative;
+	height: 140px;
 }
 
 .logo-wrapper {
@@ -28,9 +60,19 @@ body {
 
 .logo-wrapper a {
     font-family:  "Russo One", Helvetica, sans-serif;
-    font-size: 1.625em;
-    text-transform: uppercase;
+    font-size: 40px;
+	text-transform: uppercase;
+	color: #FFF;
 
+}
+
+.logo-wrapper a:after {
+	border-top: 5px solid #25A0E3;
+    content: '';
+    display: block;
+    margin: 10px auto 10px;
+	width: 120px;
+	margin-left: 0;
 }
 
 .site-brand {
@@ -64,38 +106,30 @@ body {
 	float: right;
 }
 
-/* -----------------------------------
-	Search
---------------------------------------------------------------------------------------------- */
-
-.search-toggle {
-	width: 50px;
-	height: 50px;
-	border: 0px;
-	font-size: 18px;
-	background: #e7e7e7;
-	float: right;
-	margin-right: 15px;
-}
-
-.search-toggle:hover {
+.navbar-default .navbar-nav>li>a {
 	color: #FFF;
-	background: #333;
+	text-transform: uppercase;
+}
+/* .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+	background-color: #25A0E3;
+	color: #FFF;
+	border-radius: 7px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+} */
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+	color: #FFF;
 }
 
-.form-group {
-	float: left;
+.navbar-default .navbar-nav>li>a:hover::after {
+	border-top: 5px solid #25A0E3;
+    content: '';
+    display: block;
+    margin: 10px auto 10px;
 	width: 100%;
-}
-
-#nav-search {
-	background: #DDD;
-	padding: 20px 0px;
-}
-
-#nav-search button {
-	width: 100%;
-	float: right;
+	margin-left: 0;
 }
 
 /* -----------------------------------
@@ -103,10 +137,12 @@ body {
 --------------------------------------------------------------------------------------------- */
 
 .footer-container {
-	background: #E7E7E7;
+	background: #022E54;
+	height: 60px;
 }
 
 .footer-content p {
+	color: #FFF;
 	padding: 20px 20px 10px;
 }
 
@@ -117,7 +153,7 @@ body {
 }
 
 .main-footer a {
-	color: #000;
+	color: #FFF;
 }
 
 .main-footer span {
@@ -146,7 +182,7 @@ body {
 }
 
 .search-wrapper h2::after {
-	border-top: 5px solid #337ab7;
+	border-top: 5px solid #25A0E3;
     content: '';
     display: block;
     margin: 10px auto 10px;
@@ -205,25 +241,40 @@ label.vehicle-search {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 20px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
 }
 
 input:focus::-webkit-input-placeholder {
     color: #666;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
 }
 
 /* Firefox < 19 */
 input:focus:-moz-placeholder { 
     color: #666;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
 }
 
 /* Firefox > 19 */
 input:focus::-moz-placeholder {
     color: #666;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
 }
 
 /* Internet Explorer 10 */
 input:focus:-ms-input-placeholder {
     color: #666;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
 }
 
 /* -----------------------------------
@@ -265,7 +316,7 @@ input:focus:-ms-input-placeholder {
 		display: none;
 	}
 	#main-nav {
-		width: 100%;
+		width: 300px;
 		float: right;
 		clear: none;
 	}
@@ -295,9 +346,6 @@ input:focus:-ms-input-placeholder {
 
 /* Medium devices (desktops, 992px and up) @screen-md-min */
 @media (min-width: 992px) {
-	#main-nav {
-		width: 740px;
-	}
 	.contact-info p {
 		text-align: left;
 	}
@@ -326,9 +374,6 @@ input:focus:-ms-input-placeholder {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	#main-nav {
-		width: 940px;
-	}
 	.form-group {
 		width: 1060px;
 	}
