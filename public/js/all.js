@@ -16,7 +16,7 @@ $.get("/api/inventory", function(data) {
       var rowSection = $("<div>");
       // Add a class of row to the div
       rowSection.addClass("row");
-      rowSection.attr("id", "row-section");
+      rowSection.attr("id", "row-section-" + i);
       // Append to vehicle-item
       wellSection.append(rowSection);
 
@@ -25,7 +25,7 @@ $.get("/api/inventory", function(data) {
       // Add classes
       columnImage.addClass("col-sm-4 image-column");
       // Append to row
-      $("#row-section").append(columnImage);
+      rowSection.append(columnImage);
 
       // Create anchor tag for image
       var imageAnchor = $("<a>");
@@ -45,7 +45,7 @@ $.get("/api/inventory", function(data) {
       var detailsWrapper = $("<div>");
       detailsWrapper.addClass("col-sm-8");
       detailsWrapper.attr("id", "details-column-" + i)
-      $("#row-section").append(detailsWrapper);
+      rowSection.append(detailsWrapper);
   
       // Now we add our vehicle data to the details column
       detailsWrapper.append("<h2 class='vehicle-title'>" + data[i].year + " "  + data[i].make + " " + data[i].model + " " + data[i].trim + " " + data[i].drivetrain + "</h2>");
