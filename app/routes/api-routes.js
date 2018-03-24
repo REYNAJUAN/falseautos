@@ -10,18 +10,29 @@ var Auto = require("../models/book.js");
 // =============================================================
 module.exports = function(app) {
   // Get all books
-  app.get("/api/all", function(req, res) {
-    Book.findAll({}).then(function(results) {
+  app.get("/api/inventory", function(req, res) {
+    Auto.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Get a specific book
-  app.get("/api/:book", function(req, res) {
-    if (req.params.book) {
-      Book.findAll({
+  app.get("/api/:auto", function(req, res) {
+    if (req.params.auto) {
+      Auto.findAll({
         where: {
-          title: req.params.book
+          make: req.params.make,
+          // model: req.params.model,
+          // year: req.params.year,
+          // mileage: req.params.mileage,
+          // interior: req.params.interior,
+          // engine: req.params.engine,
+          // transmission: req.params.transmission,
+          // drivetrain: req.params.drivetrain,
+          // vin: req.params.vin,
+          // warranty: req.params.warranty,
+          // price: req.params.price,
+          // exteriorColor: req.params.exteriorColor,
         }
       }).then(function(results) {
         res.json(results);
@@ -30,44 +41,44 @@ module.exports = function(app) {
   });
 
   // Get all books of a specific genre
-  app.get("/api/genre/:genre", function(req, res) {
-    if (req.params.genre) {
-      Book.findAll({
-        where: {
-          genre: req.params.genre
-        }
-      }).then(function(results) {
-        res.json(results);
-      });
-    }
-  });
+  // app.get("/api/trim/:trim", function(req, res) {
+  //   if (req.params.trim) {
+  //     Auto.findAll({
+  //       where: {
+  //         trim: req.params.trim
+  //       }
+  //     }).then(function(results) {
+  //       res.json(results);
+  //     });
+  //   }
+  // });
 
   // Get all books from a specific author
-  app.get("/api/author/:author", function(req, res) {
-    if (req.params.author) {
-      Book.findAll({
-        where: {
-          author: req.params.author
-        }
-      }).then(function(results) {
-        res.json(results);
-      });
-    }
-  });
+  // app.get("/api/model/:model", function(req, res) {
+  //   if (req.params.model) {
+  //     Auto.findAll({
+  //       where: {
+  //         model: req.params.model
+  //       }
+  //     }).then(function(results) {
+  //       res.json(results);
+  //     });
+  //   }
+  // });
 
   // Get all "long" books (books 150 pages or more)
-  app.get("/api/books/long", function(req, res) {
-    Book.findAll({
-      where: {
-        pages: {
-          $gte: 150
-        }
-      },
-      order: [["pages", "DESC"]]
-    }).then(function(results) {
-      res.json(results);
-    });
-  });
+  // app.get("/api/books/long", function(req, res) {
+  //   Book.findAll({
+  //     where: {
+  //       pages: {
+  //         $gte: 150
+  //       }
+  //     },
+  //     order: [["pages", "DESC"]]
+  //   }).then(function(results) {
+  //     res.json(results);
+  //   });
+  // });
 
   // Get all "short" books (books 150 pages or less)
   app.get("/api/books/short", function(req, res) {
