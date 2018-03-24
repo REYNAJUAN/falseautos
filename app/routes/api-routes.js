@@ -100,6 +100,8 @@ module.exports = function(app) {
       interior: req.body.interior,
       vin: req.body.vin,
       warranty: req.body.warranty,
+      price: req.body.price,
+      
       // images: req.body.images,
     });
   });

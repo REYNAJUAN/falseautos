@@ -18,6 +18,7 @@ $("#add-btn").on("click", function(event) {
     interior: $("#interior").val().trim(),
     vin: $("#vin").val().trim(),
     warranty: $("#warranty").val().trim(),
+    price: $("#price").val().trim(),
     
   };
 
@@ -42,6 +43,7 @@ $("#add-btn").on("click", function(event) {
   $("#interior").val("");
   $("#vin").val("");
   $("#warranty").val("");
+  $("#price").val("");
   // $("#image").val("");
 });
 
