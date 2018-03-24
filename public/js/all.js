@@ -73,13 +73,18 @@ $.get("/api/inventory", function(data) {
             "<li><strong>Interior:</strong> " + data[i].interior + "</li>" +
         "</ul>");
 
+        // Create extras div
+        var extrasDiv = $("<div>");
+        extrasDiv.addClass("col-sm-6");
+        extrasDiv.attr("id", "extras-column-" + i);
+        newRow.append(extrasDiv);
 
-
-
-      $("#vehicle-well-" + i).append("<h2>" + (i + 1) + ". " + data[i].mileage + "</h2>");
-      $("#vehicle-well-" + i).append("<h3>Author: " + data[i].author + "</h4>");
-      $("#vehicle-well-" + i).append("<h3>Genre: " + data[i].genre + "</h4>");
-      $("#vehicle-well-" + i).append("<h3>Pages: " + data[i].pages + "</h4>");
-    }
+        extrasDiv.append(
+            "<div class='extras'>" +
+                "<p class='price'><strong>" + data[i].price + "</strong></p>" +
+                "<a href='vehicle.html' class='btn btn-primary btn-view-details'>View Details</a>" +
+            "</div>"
+        );
+    };
   });
   
