@@ -8,6 +8,21 @@
 	Globals
 --------------------------------------------------------------------------------------------- */
 
+/*----------
+
+Size Guide
+
+16px = 1 em
+18px = 1.125 em
+20px = 1.25 em
+22px = 1.375 em
+24px = 1.5 em
+26px = 1.625 em
+28px = 1.75 em
+30px = 1.875 em
+
+----------*/
+
 html,
 body {
     height: 100%;
@@ -165,6 +180,16 @@ body {
 }
 
 /* -----------------------------------
+	Interior Pages
+--------------------------------------------------------------------------------------------- */
+
+.page-title {
+	border-bottom: 3px solid #25A0E3;
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+}
+
+/* -----------------------------------
 	Home Page
 --------------------------------------------------------------------------------------------- */
 
@@ -278,14 +303,63 @@ input:focus:-ms-input-placeholder {
 }
 
 /* -----------------------------------
-	Admin
+	Inventory Page
 --------------------------------------------------------------------------------------------- */
 
-.page-title {
-	border-bottom: 3px solid #e5e5e5;
-	padding-bottom: 10px;
-	margin-bottom: 40px;
+.results-wrapper {
+	padding: 30px 0;
 }
+
+.vehicle-item {
+	border-bottom: 3px solid #E5E5E5;
+	padding: 40px 0;
+}
+
+.vehicle-item:first-of-type {
+	padding: 0 0 40px;
+}
+
+.vehicle-item:last-of-type {
+	border-bottom: 0;
+}
+
+ul.vehicle-details {
+	list-style: none;
+	line-height: 26px;
+	padding: 0;
+}
+
+h2.vehicle-title {
+	color: #25A0E3;
+	font-weight: bold;
+	font-size: 22px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.extras {
+	width: 100%;
+	text-align: right;
+}
+
+.price {
+	width: 100%;
+	font-size: 40px;
+	color: #25A0E3;
+}
+
+.btn-view-details {
+	margin-top: 20px;
+}
+
+.vehicle-item a:hover {
+	color: #25A0E3;
+	text-decoration: none;
+}
+
+/* -----------------------------------
+	Admin
+--------------------------------------------------------------------------------------------- */
 
 .vehicle-data {
 	padding: 30px 0;
