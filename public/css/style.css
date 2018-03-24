@@ -325,6 +325,13 @@ input:focus:-ms-input-placeholder {
     -moz-transition: all .5s ease;
 }
 
+/*---------- Featured Makes ----------*/
+
+.featured-item {
+	height: 20px;
+	background: #555;
+}
+
 /* -----------------------------------
 	Inventory Page
 --------------------------------------------------------------------------------------------- */
