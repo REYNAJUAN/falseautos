@@ -81,7 +81,7 @@ $.get("/api/inventory", function(data) {
 
         extrasDiv.append(
             "<div class='extras'>" +
-                "<p class='price'><strong>" + data[i].price + "</strong></p>" +
+                "<p class='price'><strong>$" + data[i].price + "</strong></p>" +
                 "<a href='vehicle.html' class='btn btn-primary btn-view-details'>View Details</a>" +
             "</div>"
         );
