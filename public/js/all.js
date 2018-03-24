@@ -37,7 +37,7 @@ $.get("/api/inventory", function(data) {
       // Create image
       var vehicleImage = $("<img>");
       vehicleImage.addClass("img-responsive profile-photo");
-      vehicleImage.attr("src", "images/2015-camry/2015-camry-se-01.jpg");
+      vehicleImage.attr("src", "images/vehicle-" + (i + 1) + ".jpg");
       vehicleImage.attr("alt", data[i].year + " " + data[i].make + " " + data[i].model + " " + data[i].trim);
       imageAnchor.append(vehicleImage);
 
