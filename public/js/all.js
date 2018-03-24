@@ -44,7 +44,7 @@ $.get("/api/inventory", function(data) {
       // Create details wrapper
       var detailsWrapper = $("<div>");
       detailsWrapper.addClass("col-sm-8");
-      detailsWrapper.attr("id", "details-column-" + i)
+      detailsWrapper.attr("id", "details-wrapper-" + i)
       rowSection.append(detailsWrapper);
   
       // Now we add our vehicle data to the details column
@@ -54,7 +54,7 @@ $.get("/api/inventory", function(data) {
       var newRow = $("<div>");
       newRow.addClass("row");
       newRow.attr("id", "new-row");
-      $("details-column-" + i).append(newRow);
+      detailsWrapper.append(newRow);
 
       // Create details column
       var detailsColumn = $("<div>");
@@ -72,6 +72,14 @@ $.get("/api/inventory", function(data) {
             "<li><strong>Exterior Color:</strong> " + data[i].exteriorColor + "</li>" + 
             "<li><strong>Interior:</strong> " + data[i].interior + "</li>" +
         "</ul>");
+
+
+
+
+      $("#vehicle-well-" + i).append("<h2>" + (i + 1) + ". " + data[i].mileage + "</h2>");
+      $("#vehicle-well-" + i).append("<h3>Author: " + data[i].author + "</h4>");
+      $("#vehicle-well-" + i).append("<h3>Genre: " + data[i].genre + "</h4>");
+      $("#vehicle-well-" + i).append("<h3>Pages: " + data[i].pages + "</h4>");
     }
   });
   
