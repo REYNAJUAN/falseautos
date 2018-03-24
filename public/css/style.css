@@ -52,6 +52,10 @@ body {
 	padding: 20px 40px;
 }
 
+.content-wrapper {
+	padding-bottom: 60px;
+}
+
 /* -----------------------------------
 	Header Top
 --------------------------------------------------------------------------------------------- */
@@ -395,10 +399,6 @@ ul.details-list li {
 
 ul.details-list li span {
 	float: right;
-}
-
-.vehicle-overview {
-	padding-bottom: 60px;
 }
 
 .vehicle-overview h3 {
