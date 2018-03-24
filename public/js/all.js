@@ -1,6 +1,6 @@
 
 // Make a get request to our api route that will return every vehicle
-$.get("/api/all", function(data) {
+$.get("/api/inventory", function(data) {
     // For each vehicle that our server sends us back
     for (var i = 0; i < data.length; i++) {
       // Create a parent div to hold book data
@@ -16,6 +16,7 @@ $.get("/api/all", function(data) {
       var rowSection = $("<div>");
       // Add a class of row to the div
       rowSection.addClass("row");
+      rowSection.attr("id", "row-section");
       // Append to vehicle-item
       wellSection.append(rowSection);
 
@@ -24,7 +25,7 @@ $.get("/api/all", function(data) {
       // Add classes
       columnImage.addClass("col-sm-4 image-column");
       // Append to row
-      rowSection.append(columnImage);
+      $("#row-section").append(columnImage);
 
       // Create anchor tag for image
       var imageAnchor = $("<a>");
@@ -37,20 +38,40 @@ $.get("/api/all", function(data) {
       var vehicleImage = $("<img>");
       vehicleImage.addClass("img-responsive profile-photo");
       vehicleImage.attr("src", "images/2015-camry/2015-camry-se-01.jpg");
-      vehicleImage.attr("alt", data[i].year + data[i].make + data[i].model + data[i].trim);
+      vehicleImage.attr("alt", data[i].year + " " + data[i].make + " " + data[i].model + " " + data[i].trim);
       imageAnchor.append(vehicleImage);
+
+      // Create details wrapper
+      var detailsWrapper = $("<div>");
+      detailsWrapper.addClass("col-sm-8");
+      detailsWrapper.attr("id", "details-column-" + i)
+      $("#row-section").append(detailsWrapper);
   
-      // Now we add our vehicle data to the well we just placed on the page
-      $("#vehicle-well-" + i).append("<h2>" + (i + 1) + ". " + data[i].title + "</h2>");
+      // Now we add our vehicle data to the details column
+      detailsWrapper.append("<h2 class='vehicle-title'>" + data[i].year + " "  + data[i].make + " " + data[i].model + " " + data[i].trim + " " + data[i].drivetrain + "</h2>");
 
+      // Create new row
+      var newRow = $("<div>");
+      newRow.addClass("row");
+      newRow.attr("id", "new-row");
+      $("details-column-" + i).append(newRow);
 
+      // Create details column
+      var detailsColumn = $("<div>");
+      detailsColumn.addClass("col-sm-6");
+      detailsColumn.attr("id", "details-column" + i);
+      newRow.append(detailsColumn);
 
-
-
-      $("#vehicle-well-" + i).append("<h2>" + (i + 1) + ". " + data[i].mileage + "</h2>");
-      $("#vehicle-well-" + i).append("<h3>Author: " + data[i].author + "</h4>");
-      $("#vehicle-well-" + i).append("<h3>Genre: " + data[i].genre + "</h4>");
-      $("#vehicle-well-" + i).append("<h3>Pages: " + data[i].pages + "</h4>");
+      // Create details list
+      detailsColumn.append(
+        "<ul class='vehicle-details'>" +
+            "<li><strong>Mileage:</strong> " + data[i].mileage + "</li>" + 
+            "<li><strong>Engine:</strong> " + data[i].engine + "</li>" + 
+            "<li><strong>Transmission:</strong> " + data[i].transmission + "</li>" + 
+            "<li><strong>Drivetrain:</strong> " + data[i].drivetrain + "</li>" + 
+            "<li><strong>Exterior Color:</strong> " + data[i].exteriorColor + "</li>" + 
+            "<li><strong>Interior:</strong> " + data[i].interior + "</li>" +
+        "</ul>");
     }
   });
   
