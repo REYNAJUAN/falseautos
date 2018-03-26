@@ -19,6 +19,7 @@ $("#add-btn").on("click", function(event) {
     vin: $("#vin").val().trim(),
     warranty: $("#warranty").val().trim(),
     price: $("#price").val().trim(),
+    vehicleOverview: $("#vehicleOverview").val().trim(),
     
   };
 
@@ -44,6 +45,7 @@ $("#add-btn").on("click", function(event) {
   $("#vin").val("");
   $("#warranty").val("");
   $("#price").val("");
+  $("#vehicleOverview").val("");
   // $("#image").val("");
 });
 

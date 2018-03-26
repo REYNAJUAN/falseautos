@@ -18,24 +18,18 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // add route loads the add.html page, where users can enter new books to the db
+  // add route loads the add.html page, where users can enter new cars to the db
   app.get("/admin", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/admin.html"));
   });
 
-  // all route loads the all.html page, where all books in the db are displayed
+  // all route loads the all.html page, where all cars in the db are displayed
   app.get("/inventory", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/inventory.html"));
   });
 
-  // short route loads the short.html page, where short books in the db are displayed
-  app.get("/short", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/short.html"));
+   // all route loads the all.html page, where all cars in the db are displayed
+   app.get("/api/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/search.html"));
   });
-
-  // long route loads the long.html page, where long books in the db are displayed
-  app.get("/long", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/long.html"));
-  });
-
 };

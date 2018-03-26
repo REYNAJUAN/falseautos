@@ -44,6 +44,9 @@ var Auto = sequelize.define("auto", {
   warranty: {
     type: Sequelize.STRING
   },
+  vehicleOverview: {
+    type: Sequelize.STRING
+  },
   price: {
     type: Sequelize.INTEGER
   },

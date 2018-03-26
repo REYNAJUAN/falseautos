@@ -1,7 +1,6 @@
 // When user hits the search-btn
 $("#btn-search").on("click", function(event) {
   event.preventDefault();
-  window.location.href='search.html';
   // console.log(window.location.href);
   
   // Save the book they typed into the book-search input
@@ -13,6 +12,7 @@ $("#btn-search").on("click", function(event) {
     console.log(data);
     // Call our renderBooks function to add our books to the page
     renderVehicles(data);
+    // window.location.href='search.html';
     return false;
   });
   
